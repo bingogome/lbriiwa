@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<robot name="iiwa7">
+  <link name="base_iiwa">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_0.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_0.stl"/>
+      </geometry>
+    </collision>
+
+    <self_collision_checking>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <capsule radius="0.15" length="0.25"/>
+      </geometry>
+    </self_collision_checking>
+  </link>
+
+  <link name="link_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_1.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_2.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_3.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_4">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_4_y_z.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_5">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_5.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_5.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_6">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_6.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_6.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_7">
+    <visual>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/visual/link_7.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://lbr_bringup/meshes/iiwa7/collision/link_7.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_ee"/>
+
+  <!-- joint between links -->
+  <joint name="joint_a1" type="revolute">
+    <parent link="base_iiwa"/>
+    <child link="link_1"/>
+    <origin xyz="0 0 0.157" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.96705972839" upper="2.96705972839"
+           effort="300" velocity="1.71042266695" />
+  </joint>
+
+  <joint name="joint_a2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0 0 0.183" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.09439510239" upper="2.09439510239"
+           effort="300" velocity="1.71042266695" />
+  </joint>
+
+  <joint name="joint_a3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0 0 0.185" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.96705972839" upper="2.96705972839"
+           effort="300" velocity="1.74532925199" />
+  </joint>
+
+  <joint name="joint_a4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <origin xyz="0 0 0.215" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-2.09439510239" upper="2.09439510239"
+           effort="300" velocity="2.26892802759" />
+  </joint>
+
+  <joint name="joint_a5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <origin xyz="0 0 0.4" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.96705972839" upper="2.96705972839"
+           effort="300" velocity="2.44346095279" />
+  </joint>
+
+  <joint name="joint_a6" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.09439510239" upper="2.09439510239"
+           effort="300" velocity="3.14159265359" />
+  </joint>
+
+  <joint name="joint_a7" type="revolute">
+    <parent link="link_6"/>
+    <child link="link_7"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.05432619099" upper="3.05432619099"
+           effort="300" velocity="3.14159265359" />
+  </joint>
+
+  <joint name="joint_ee" type="fixed">
+    <parent link="link_7"/>
+    <child link="link_ee"/>
+    <origin xyz="0 0 0.126" rpy="0 0 0"/>
+  </joint>
+
+</robot>

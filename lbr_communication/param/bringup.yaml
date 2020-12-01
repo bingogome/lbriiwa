@@ -1,0 +1,17 @@
+lbr_commands_node:
+  ros__parameters:
+
+    port: 30001
+    LBR/ip: '172.31.1.150'
+
+lbr_statusdata_node:
+  ros__parameters:
+
+    port: 30002
+    LBR/ip: '172.31.1.150'
+
+lbr_sensordata_node:
+  ros__parameters:
+
+    port: 30003
+    LBR/ip: '172.31.1.150'
